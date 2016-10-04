@@ -11,7 +11,7 @@ import { Store } from './store';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'Increment app';
 
   constructor(
     private service: AppService,
@@ -24,8 +24,8 @@ export class AppComponent {
   }
 
 
-  get state(): Observable<any> {
-    return this.store.getState();
+  get counter(): Observable<any> {
+    return this.store.getState().map(s => s.counter);
   }
 
 }

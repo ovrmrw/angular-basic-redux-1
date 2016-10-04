@@ -1,5 +1,26 @@
 # angular-basic-redux-1
 
+[Demo on Firebase Hosting](https://angular-basic-redux-1.firebaseapp.com/)
+
+---
+
+## Setup
+```
+$ npm install
+```
+
+## Run
+```
+$ npm start
+```
+
+## Deploy
+```
+$ npm run deploy
+```
+
+---
+
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
 ## Development server

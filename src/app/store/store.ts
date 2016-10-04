@@ -23,7 +23,11 @@ export class Store {
     private dispatcher$: Dispatcher<Action>
   ) {
     this.provider$ = new BehaviorSubject(initialState);
+    this.combineReducers();
+  }
 
+
+  private combineReducers(): void {
     ReducerContainer
       .zip<AppState>(...[
         this.dispatcher$.scan<number>((state, action) => {
@@ -34,8 +38,8 @@ export class Store {
           }
         }, initialState.counter),
 
-        (counter) => {
-          return Object.assign({}, initialState, { counter }) as AppState;
+        (counter): AppState => {
+          return Object.assign<{}, AppState, {}>({}, initialState, { counter });
         }
       ])
       .subscribe(newState => {
