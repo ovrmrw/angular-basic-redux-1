@@ -39,7 +39,7 @@ export class Store {
             return state;
           }
         }, initialState.counter),
-        this.dispatcher$.scan<number>((state, action) => {
+        this.dispatcher$.scan<number | null>((state, action) => {
           if (action instanceof TimeUpdateAction) {
             return action.timestamp;
           } else {
