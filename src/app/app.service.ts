@@ -30,7 +30,9 @@ export class AppService {
     this.http$
       .get('https://ntp-a1.nict.go.jp/cgi-bin/json')
       .map<number>(res => +(res.json().st) * 1000)
-      .subscribe(timestamp => this.dispatcher$.next(new TimeUpdateAction(timestamp)));
+      .subscribe(timestamp => {
+        this.dispatcher$.next(new TimeUpdateAction(timestamp));
+      });
   }
 
 }

@@ -12,7 +12,7 @@ import { Store } from './store';
       {{title}}  
     </h1>
     <h2>{{counter | async}}</h2>
-    <h3>{{timestamp | async | date:'medium'}}
+    <h3>{{timestamp | async | date:'medium'}}</h3>
     <div>
       <button (click)="increment()">Increment</button>
       <button (click)="decrement()">Decrement</button>

@@ -4,12 +4,12 @@ import { Observable, Subject } from 'rxjs/Rx';
 
 @Injectable()
 export class Dispatcher<T> extends Subject<T> {
-  next<T>(action) { super.next(action); }
+  next(action: T) { super.next(action); }
 }
 
 
 export class Provider<T> extends Subject<T>{
-  next<T>(state) { super.next(state); }
+  next(state: T) { super.next(state); }
 }
 
 
