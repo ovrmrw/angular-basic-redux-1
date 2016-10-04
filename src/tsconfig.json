@@ -13,6 +13,7 @@
     "typeRoots": [
       "../node_modules/@types"
     ],
-    "strictNullChecks": true
+    "strictNullChecks": true,
+    "skipLibCheck": true
   }
 }

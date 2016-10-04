@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs/Rx';
 
 import { Dispatcher, Provider, ReducerContainer } from './common';
-import { Action, IncrementAction, TimeUpdateAction } from './actions';
+import { Action } from './actions';
+import { incrementReducer, timestampReducer } from './reducers';
 
 
 interface AppState {
@@ -32,20 +33,8 @@ export class Store {
   private combineReducers(): void {
     ReducerContainer
       .zip<AppState>(...[
-        this.dispatcher$.scan<number>((state, action) => {
-          if (action instanceof IncrementAction) {
-            return state + action.num;
-          } else {
-            return state;
-          }
-        }, initialState.counter),
-        this.dispatcher$.scan<number | null>((state, action) => {
-          if (action instanceof TimeUpdateAction) {
-            return action.timestamp;
-          } else {
-            return state;
-          }
-        }, initialState.timestamp),
+        incrementReducer(initialState.counter, this.dispatcher$),
+        timestampReducer(initialState.timestamp, this.dispatcher$),
 
         (counter, timestamp): AppState => {
           return Object.assign<{}, AppState, {}>({}, initialState, { counter, timestamp });

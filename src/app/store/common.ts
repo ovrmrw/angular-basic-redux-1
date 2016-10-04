@@ -15,3 +15,13 @@ export class Provider<T> extends Subject<T>{
 
 export class ReducerContainer<T> extends Observable<T> {
 }
+
+
+export interface StateReducer<T> {
+  (state: T, dispatcher: Dispatcher<any>): Observable<T>;
+}
+
+
+export interface NonStateReducer<T> {
+  (dispatcher: Dispatcher<any>): Observable<T>;
+}
