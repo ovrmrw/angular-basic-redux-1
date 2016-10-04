@@ -2,16 +2,18 @@ import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs/Rx';
 
 import { Dispatcher, Provider, ReducerContainer } from './common';
-import { Action, IncrementAction } from './actions';
+import { Action, IncrementAction, TimeUpdateAction } from './actions';
 
 
 interface AppState {
   counter: number;
+  timestamp: number | null;
 }
 
 
 const initialState: AppState = {
-  counter: 0
+  counter: 0,
+  timestamp: null
 };
 
 
@@ -37,9 +39,16 @@ export class Store {
             return state;
           }
         }, initialState.counter),
+        this.dispatcher$.scan<number>((state, action) => {
+          if (action instanceof TimeUpdateAction) {
+            return action.timestamp;
+          } else {
+            return state;
+          }
+        }, initialState.timestamp),
 
-        (counter): AppState => {
-          return Object.assign<{}, AppState, {}>({}, initialState, { counter });
+        (counter, timestamp): AppState => {
+          return Object.assign<{}, AppState, {}>({}, initialState, { counter, timestamp });
         }
       ])
       .subscribe(newState => {

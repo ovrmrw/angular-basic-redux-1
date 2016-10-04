@@ -1,5 +1,4 @@
-import { Component } from '@angular/core';
-import { Observable } from 'rxjs/Rx';
+import { Component, ChangeDetectionStrategy } from '@angular/core';
 
 import { AppService } from './app.service';
 import { Store } from './store';
@@ -7,8 +6,21 @@ import { Store } from './store';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  // templateUrl: './app.component.html',
+  template: `
+    <h1>
+      {{title}}  
+    </h1>
+    <h2>{{counter | async}}</h2>
+    <h3>{{timestamp | async | date:'medium'}}
+    <div>
+      <button (click)="increment()">Increment</button>
+      <button (click)="decrement()">Decrement</button>
+      <button (click)="timeUpdate()">TimeUpdate</button>
+    </div>
+  `,
+  styleUrls: ['./app.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
   title = 'Increment app';
@@ -19,13 +31,14 @@ export class AppComponent {
   ) { }
 
 
-  increment(): void {
-    this.service.increment();
-  }
+  increment(): void { this.service.increment(); }
+
+  decrement(): void { this.service.decrement(); }
+
+  timeUpdate(): void { this.service.timeUpdate(); }
 
 
-  get counter(): Observable<any> {
-    return this.store.getState().map(s => s.counter);
-  }
+  get counter() { return this.store.getState().map(s => s.counter); }
+  get timestamp() { return this.store.getState().map(s => s.timestamp).do(value => console.log('timestamp:', value)); }
 
 }
