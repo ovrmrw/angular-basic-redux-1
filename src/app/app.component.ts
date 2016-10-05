@@ -39,6 +39,6 @@ export class AppComponent {
 
 
   get counter() { return this.store.getState().map(s => s.counter); }
-  get timestamp() { return this.store.getState().map(s => s.timestamp).do(value => console.log('timestamp:', value)); }
+  get timestamp() { return this.store.getState().map(s => s.timestamp); }
 
 }
