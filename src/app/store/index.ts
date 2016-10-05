@@ -1,3 +1,4 @@
 export * from './actions';
-export * from './common';
-export * from './store';
+export { Dispatcher } from './common';
+export { Store } from './store';
+export { StoreModule } from './module';
