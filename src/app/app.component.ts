@@ -12,14 +12,14 @@ import { Store } from './store';
       {{title}}  
     </h1>
     <h2>{{counter | async}}</h2>
-    <h3>{{timestamp | async | date:'medium'}}</h3>
+    <h3>{{timestamp | async}}</h3>
     <div>
       <button (click)="increment()">Increment</button>
       <button (click)="decrement()">Decrement</button>
       <button (click)="timeUpdate()">TimeUpdate</button>
     </div>
   `,
-  styleUrls: ['./app.component.css'],
+  // styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
