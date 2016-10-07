@@ -7,6 +7,7 @@ import { Store } from './store';
 @Component({
   selector: 'app-root',
   // templateUrl: './app.component.html',
+  // styleUrls: ['./app.component.css'],
   template: `
     <h1>
       {{title}}  
@@ -18,8 +19,9 @@ import { Store } from './store';
       <button (click)="decrement()">Decrement</button>
       <button (click)="timeUpdate()">TimeUpdate</button>
     </div>
+    <hr />
+    <a href="https://github.com/ovrmrw/angular-basic-redux-1">GitHub</a>
   `,
-  // styleUrls: ['./app.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent {
