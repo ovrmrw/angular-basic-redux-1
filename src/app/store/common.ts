@@ -8,7 +8,7 @@ export class Dispatcher<T> extends Subject<T> {
 }
 
 
-export class Provider<T> extends Subject<T>{
+export class Provider<T> extends Subject<T> {
   next(state: T) { super.next(state); }
 }
 

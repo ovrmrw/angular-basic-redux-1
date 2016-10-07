@@ -11,8 +11,8 @@
     "e2e": "protractor",
     "aot": "ng serve --aot",
     "publish": "node build/publish-files.js",
-    "deploy": "ng build --prod --base-href /angular-basic-redux-1/docs/ && npm run publish",
-    "deploy:aot": "ng build --prod --aot --base-href /docs/ && npm run publish"
+    "deploy": "ng build --prod --base-href /angular-basic-redux-1/ && npm run publish",
+    "deploy:aot": "ng build --prod --aot --base-href /angular-basic-redux-1/ && npm run publish"
   },
   "private": true,
   "dependencies": {
