@@ -9,17 +9,29 @@
 $ npm install
 ```
 
-## Run
+## Run (JiT)
 ```
 $ npm start
 ```
 
-## Deploy
+## Run (AoT)
+```
+$ npm run aot
+```
+
+## Deploy (JiT)
 ```
 $ npm run deploy
 ```
 
+## Deploy (AoT)
+```
+$ npm run deploy:aot
+```
+
 ---
+
+(angular-cli)
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.16.
 
