@@ -1,6 +1,6 @@
 # angular-basic-redux-1
 
-[Demo on GitHub Pages](https://ovrmrw.github.io/angular-basic-redux-1/.publish)
+[Demo on GitHub Pages](https://ovrmrw.github.io/angular-basic-redux-1/publish)
 
 ---
 

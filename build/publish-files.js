@@ -4,7 +4,7 @@ const path = require('path');
 
 const root = path.resolve();
 const DIST = path.join(root, 'dist');
-const PUBLISH = path.join(root, '.publish');
+const PUBLISH = path.join(root, 'publish');
 
 fs.remove(PUBLISH, err => {
   if (err) { throw err; }
