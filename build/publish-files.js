@@ -4,11 +4,11 @@ const path = require('path');
 
 const root = path.resolve();
 const DIST = path.join(root, 'dist');
-const PUBLISH = path.join(root, 'publish');
+const DOCS = path.join(root, 'docs');
 
-fs.remove(PUBLISH, err => {
+fs.remove(DOCS, err => {
   if (err) { throw err; }
-  fs.copy(DIST, PUBLISH, err => {
+  fs.copy(DIST, DOCS, err => {
     if (err) { throw err; }
   });
 });
