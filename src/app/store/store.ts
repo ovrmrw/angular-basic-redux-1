@@ -6,7 +6,7 @@ import { Action } from './actions';
 import { incrementReducer, timestampReducer } from './reducers';
 
 
-interface AppState {
+export interface AppState {
   counter: number;
   timestamp: number | null;
 }

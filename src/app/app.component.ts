@@ -1,4 +1,5 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Observable } from 'rxjs/Rx';
 
 import { AppService } from './app.service';
 import { Store } from './store';
@@ -19,8 +20,6 @@ import { Store } from './store';
       <button (click)="decrement()">Decrement</button>
       <button (click)="timeUpdate()">TimeUpdate</button>
     </div>
-    <hr />
-    <a href="https://github.com/ovrmrw/angular-basic-redux-1">GitHub</a>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
