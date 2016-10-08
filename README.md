@@ -19,14 +19,9 @@ $ npm start
 $ npm run aot
 ```
 
-## Deploy (JiT)
+## Deploy to GitHub Pages (JiT)
 ```
 $ npm run deploy
-```
-
-## Deploy (AoT)
-```
-$ npm run deploy:aot
 ```
 
 ---
