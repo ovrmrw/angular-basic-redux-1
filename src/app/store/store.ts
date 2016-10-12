@@ -48,7 +48,9 @@ export class Store {
 
 
   getState(): Observable<AppState> {
-    return this.provider$.asObservable();
+    return this.provider$.asObservable()
+      // .do(() => console.log('provider'))
+      .share();
   }
 
 }
